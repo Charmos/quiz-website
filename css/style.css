@@ -1,0 +1,76 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+html, body {
+	color: #777;
+}
+
+.main-container {
+	background-image: url("../img/background-photo.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	min-height: 100vh;
+}
+
+.header {
+	width: 100%;
+	height: 40px;
+	background-color: rgba(17, 17, 17, .5);
+	float: right;
+}
+
+.width {
+	width: 80%;
+	margin: 0px auto;
+}
+
+.header-title {
+	color: white;
+	font-family: 'montserrat';
+	letter-spacing: .7px;
+}
+
+.banner {
+	background-image: url("../img/banner.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position-y: 50%;
+	height: 230px;
+	position: relative;
+	top: 60px;
+	margin-bottom: 20px;
+}
+
+.navigation {
+	background-color: rgba(17, 17, 17, .5);
+	height: 40px;
+	position: relative;
+	top: 59px;
+}
+
+.navigation a {
+	font-size: 15px;
+	margin-left: 15px;
+	vertical-align: middle;
+	line-height: 40px;
+	color: white;
+}
+
+.content {
+	background-color: rgba(255, 255, 255, 0.4);
+	color: black;
+	overflow: hidden;
+	position: relative;
+	top: 59px;
+	padding-top: 20px;
+}
+
+.main-content {
+
+}
+
+.sidebar {
+
+}
