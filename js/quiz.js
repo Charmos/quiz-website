@@ -7,8 +7,10 @@
     var quizEnd = $('#quizEnd');
     var quizContainer = $('#quizPages');
     var resetButton = $('#resetButton');
+    var resultButton = $('#resultButton');
     var prevButton = $('#prevButton');
     var nextButton = $('#nextButton');
+    var quizBreakdown = $('#quizBreakdown');
     var progress = 0;
     var totalProgress = -1;
     var progressBar = $('#quizProgressBar');
@@ -154,7 +156,13 @@
     });
 
     resultButton.click(function() {
+      // hide whatever page is active
+      $('.'+PAGE_VISIBLE_CLASS).removeClass(PAGE_VISIBLE_CLASS);
+      $('#results').addClass(PAGE_VISIBLE_CLASS);
 
+      //teardown
+
+      //rerender
     });
 
     prevButton.click(function() {
