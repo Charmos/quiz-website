@@ -34,7 +34,8 @@
               <ul id="quizPages" class="quiz-pages">
               </ul>
               <div id="quizButtons" class="btn-group">
-                <button class="btn btn-primary">Previous</button><button class="btn btn-primary">Next</button>
+                <button id="prevButton" class="btn btn-primary">Previous</button>
+                <button id="nextButton" class="btn btn-primary">Next</button>
               </div>
               <div id="quizProgress" class="quiz-progress">
                 <div class="quiz-progress-label" id="quizProgressLabel">
@@ -57,11 +58,16 @@
                 <p>You've reached the end of the quiz!</p>
                 <div>
                   <button id="resetButton" class="btn btn-primary">Take Again</button>
-                  <button class="btn btn-primary">View All Results</button>
+                  <button id="resultButton" class="btn btn-primary">View All Results</button>
                 </div>
               </div>
             </div>
-            <div id="results" class="page"></div>
+            <div id="results" class="page">
+              <p>Quiz Question Analysis</p>
+              <ul class="quizBreakdown">
+
+              </ul>
+            </div>
          </div>
 
          <div class="col-md-4 sidebar">
@@ -76,6 +82,7 @@
  </div>
   <script src="js/jquery.js" charset="utf-8"></script>
   <script src="js/bootstrap.min.js" charset="utf-8"></script>
+  <script src="js/quiz.questions.js" charset="utf-8"></script>
   <script src="js/quiz.js" charset="utf-8"></script>
 </body>
 

@@ -1,4 +1,4 @@
-(function($, document) {
+(function($, document, window) {
   'use strict';
   var QUESTION_ACTIVE_CLASS = 'question--active';
   var PAGE_VISIBLE_CLASS = 'page--visible';
@@ -7,38 +7,14 @@
   var quizEnd  = $('#quizEnd');
   var quizContainer = $('#quizPages');
   var resetButton = $('#resetButton');
+  var prevButton = $('#prevButton');
+  var nextButton = $('#nextButton');
   var progress = 0;
   var totalProgress = -1;
   var progressBar = $('#quizProgressBar');
   var tally = [];
   var questionPages;
-  var questions = [
-    {
-      text: 'Who\'s your daddy?',
-      correct: 0,
-      choices: [
-        {value: 0, text: 'Me'},
-        {value: 1, text: 'Not Me'},
-      ]
-    },
-    {
-      text: 'What is the largest animal in the planet?',
-      correct: 1,
-      choices: [
-        {value: 0, text: 'Blue Whale'},
-        {value: 1, text: 'Yo Momma'},
-      ]
-    },
-    {
-      text: 'What\'s the name of THAT bat?',
-      correct: 0,
-      choices: [
-        {value:0, text: 'Lucille'},
-        {value:1, text: 'Batty McBatface'},
-        {value:2, text: 'BATMan'}
-      ]
-    }
-  ];
+  var questions = window.questions;
 
 
   function resetProgress() {
@@ -147,6 +123,7 @@
   $('#totalQuestions').text(totalProgress);
   $(questionPages[0]).addClass(QUESTION_ACTIVE_CLASS);
 
+  /* Initialize Tally */
   for(var qCount = 0; qCount <  questions.length; qCount++) {
     tally[qCount] = 0;
   }
@@ -162,4 +139,8 @@
 
   });
 
-}($, document));
+  resultButton.click(function() {
+
+  });
+
+}($, document, window));
