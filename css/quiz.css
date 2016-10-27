@@ -1,0 +1,19 @@
+.page {
+  display: none;
+}
+
+.page--visible {
+  display: block;
+}
+
+.question {
+  display: none;
+}
+
+.question--active {
+  display: block;
+}
+
+.quiz-progress-container {
+  margin-top: 40px;
+}

@@ -5,6 +5,7 @@
  <title>ICONIC CHAIRS OF THE 20TH CENTURY | QUIZ</title>
  <link rel="stylesheet" href="css/bootstrap.css">
  <link rel="stylesheet" href="css/style.css">
+ <link rel="stylesheet" href="css/quiz.css">
 </head>
 
 <body>
@@ -29,8 +30,34 @@
      <div class="container">
        <div class="row">
          <div class="col-md-8 main-content">
-            <div id="home" class="page"></div>
-            <div id="quiz" class="page"></div>
+            <div id="quiz" class="page page--visible">
+              <ul id="quizPages">
+              </ul>
+              <div id="quizProgress" class="quiz-progress">
+                <div class="quiz-progress-label" id="quizProgressLabel">
+                  Quiz Progress: <span id="currentQuestion"></span>/<span id="totalQuestions"></span>
+                </div>
+                <div class="progress">
+                  <div id="quizProgressBar"
+                        class="progress-bar progress-bar-striped active quiz-progress"
+                        role="progressbar"
+                        aria-valuenow="0"
+                        aria-valuemin="0"
+                        aria-valuemax="100" style="width: 0%">
+                  </div>
+                </div> <!-- progress -->
+              </div>
+            </div>
+            <div id="quizEnd" class="page">
+              <div class="quiz-end-content">
+                <h3>Congratulations! </h3>
+                <p>You've reached the end of the quiz!</p>
+                <div>
+                  <button id="resetButton" class="btn btn-primary">Take Again</button>
+                  <button class="btn btn-primary">View All Results</button>
+                </div>
+              </div>
+            </div>
             <div id="results" class="page"></div>
          </div>
 
