@@ -15,6 +15,7 @@
     var totalProgress = -1;
     var progressBar = $('#quizProgressBar');
     var tally = [];
+    var takes = 1;
     var questionPages;
     var questions = window.questions;
 
@@ -68,7 +69,9 @@
     function checkAnswer(answer, questionIndex, questions) {
         var question = questions[questionIndex];
         var questionNumber = questionIndex + 1;
-        var isCorrect = question.correct == answer;
+        var isCorrect = question.correct === parseInt(answer);
+
+        console.log(question);
 
         if (isCorrect) {
             console.log('Correct Answer for Question#' + questionNumber);
@@ -132,6 +135,18 @@
         return questionsPlaceholder;
     }
 
+
+    function reset() {
+      $(questionPages[questionPages.length - 1]).removeClass(QUESTION_ACTIVE_CLASS);
+      $(questionPages[0]).addClass(QUESTION_ACTIVE_CLASS);
+      progress = INITIAL_PROGRESS;
+      quizEnd.removeClass(PAGE_VISIBLE_CLASS);
+      quizPage.addClass(PAGE_VISIBLE_CLASS);
+      setProgressBarValue(0);
+      $('#currentQuestion').text(progress);
+      takes++;
+    }
+
     quizContainer.append(generateQuestions(questions).children());
     questionPages = $('.question');
     totalProgress = questionPages.length;
@@ -145,24 +160,34 @@
     }
 
     resetButton.click(function() {
-        $(questionPages[questionPages.length - 1]).removeClass(QUESTION_ACTIVE_CLASS);
-        $(questionPages[0]).addClass(QUESTION_ACTIVE_CLASS);
-        progress = INITIAL_PROGRESS;
-        quizEnd.removeClass(PAGE_VISIBLE_CLASS);
-        quizPage.addClass(PAGE_VISIBLE_CLASS);
-        setProgressBarValue(0);
-        $('#currentQuestion').text(progress);
-
+      reset();
     });
 
     resultButton.click(function() {
+      var templateString = '';
+      //teardown
+      quizBreakdown.empty();
+      //rerender
+
+      for(var tCount = 0; tCount < tally.length; tCount++) {
+        var tallyPercent = Math.ceil(100*tally[tCount]/takes);
+        console.log(tallyPercent);
+        var progressStrPre = '<li> Question '+ (tCount+1) +'/'+tally.length+'<div class="progress">';
+        var progressBar = '<div style="width:'+tallyPercent+'%" class="progress-bar progress-bar-striped active" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">'+ tallyPercent +'% Correct </div>';
+        var progressStrPost = '</div></li>';
+        var res = progressStrPre+progressBar+progressStrPost;
+
+        templateString+=res;
+      }
+
+      quizBreakdown.append(templateString);
+
       // hide whatever page is active
+      //show page
       $('.'+PAGE_VISIBLE_CLASS).removeClass(PAGE_VISIBLE_CLASS);
       $('#results').addClass(PAGE_VISIBLE_CLASS);
 
-      //teardown
 
-      //rerender
     });
 
     prevButton.click(function() {
@@ -173,6 +198,12 @@
       nextQuestionPage();
     });
 
+
+    $('#exitResults').click(function() {
+      $('.'+PAGE_VISIBLE_CLASS).removeClass(PAGE_VISIBLE_CLASS);
+      $('#quiz').addClass(PAGE_VISIBLE_CLASS);
+      reset();
+    });
 
 
 }($, document, window));
