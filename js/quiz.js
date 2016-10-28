@@ -41,7 +41,6 @@
         } else {
             console.log('END');
             console.log('Display END Page');
-            //currentQuestion = questionPages.length - 1;
             quizPage.removeClass(PAGE_VISIBLE_CLASS);
             quizEnd.addClass(PAGE_VISIBLE_CLASS);
         }
@@ -51,9 +50,9 @@
         var curr;
 
         if (progress > 0) {
-            curr = context.questionPages[progress];
+            curr = questionPages[progress];
             $(curr).removeClass(QUESTION_ACTIVE_CLASS);
-            curr = context.questionPages[--progress];
+            curr = questionPages[--progress];
             $(curr).addClass(QUESTION_ACTIVE_CLASS);
         } else {
             console.log('END');
@@ -70,18 +69,19 @@
         var question = questions[questionIndex];
         var questionNumber = questionIndex + 1;
         var isCorrect = question.correct === parseInt(answer);
-
+        var progressNum;
+        var progressPercent;
         console.log(question);
 
         if (isCorrect) {
-            console.log('Correct Answer for Question#' + questionNumber);
             tally[questionIndex]++;
-        } else {
-            console.warn('Wrong Answer for Question#' + questionNumber);
         }
+
         nextQuestionPage();
-        var progressNum = progress;
-        var progressPercent = Math.ceil(100 * progressNum / totalProgress);
+
+        progressNum = progress;
+        progressPercent = Math.ceil(100 * progressNum / totalProgress);
+        
         $('#currentQuestion').text(progress);
         setProgressBarValue(progressPercent);
         console.log(tally);
@@ -118,14 +118,13 @@
                 var questionIndex;
                 var answer;
 
+                // don't do anything if the click isn't from a button
                 if (!isAButton) {
                     return;
                 }
 
                 answer = $(el).attr('data-value');
                 questionIndex = parseInt($($('.' + QUESTION_ACTIVE_CLASS)[0]).attr('data-index'));
-                console.log(answer);
-                //_this.checkQuestion(questionIndex, answer);
                 checkAnswer(answer, questionIndex, questions);
 
             });
@@ -154,7 +153,7 @@
     $('#totalQuestions').text(totalProgress);
     $(questionPages[0]).addClass(QUESTION_ACTIVE_CLASS);
 
-    /* Initialize Tally */
+    /* Initialize tally */
     for (var qCount = 0; qCount < questions.length; qCount++) {
         tally[qCount] = 0;
     }
