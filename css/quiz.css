@@ -1,3 +1,7 @@
+.quiz .main-container {
+	background-image: url(../img/glow-chair.JPG);
+}
+
 .page {
   display: none;
 }
