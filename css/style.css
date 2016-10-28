@@ -65,10 +65,22 @@ html, body {
 	padding-top: 59px;
 }
 
-.main-content {
-
+.content-photo {
+	height: 300px;
+	width: auto;
+	margin-bottom: 10px;
 }
 
-.sidebar {
+.photo-float-left {
+	float: left;
+	margin-right: 10px;
+}
 
+.photo-float-right {
+	float: right;
+	margin-left: 10px;
+}
+
+.main-content > div {
+	overflow: hidden;
 }
