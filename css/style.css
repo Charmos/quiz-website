@@ -47,7 +47,8 @@ html, body {
 	background-color: rgba(17, 17, 17, .5);
 	height: 40px;
 	position: relative;
-	top: 59px;
+	top: 70px;
+	margin-bottom: 70px;
 }
 
 .navigation a {
@@ -62,11 +63,17 @@ html, body {
 	background-color: rgba(255, 255, 255, 0.4);
 	color: black;
 	overflow: hidden;
-	padding-top: 59px;
+	padding-top: 30px;
 }
 
 .content-photo {
 	height: 300px;
+	width: auto;
+	margin-bottom: 10px;
+}
+
+.content-photo-small {
+	height: 200px;
 	width: auto;
 	margin-bottom: 10px;
 }
@@ -83,4 +90,6 @@ html, body {
 
 .main-content > div {
 	overflow: hidden;
+	margin-bottom: 20px;
 }
+
