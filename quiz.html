@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <title>ICONIC CHAIRS OF THE 20TH CENTURY | QUIZ</title>
+ <link rel="stylesheet" href="css/bootstrap.css">
+ <link rel="stylesheet" href="css/style.css">
+ <link rel="stylesheet" href="css/quiz.css">
+</head>
+
+<body>
+
+ <div class="main-container">
+   <header class="header">
+     <div class="width">
+       <img src="img/vagary-white.png" width="40" height="40">
+       <span class="header-title">ICONIC CHAIRS OF THE 20TH CENTURY QUIZ</span>
+     </div>
+   </header>
+
+   <div class="width banner"></div>
+
+   <nav class="navigation width">
+     <a href="index.html">Home</a>
+     <a href="quiz.html">Quiz</a>
+     <a href="about.html">About</a>
+   </nav>
+
+   <div class="width content">
+     <div class="container">
+       <div class="row">
+         <div class="col-md-8 main-content">
+            <div id="quiz" class="page page--visible">
+              <ul id="quizPages" class="quiz-pages">
+              </ul>
+              <div id="quizButtons" class="btn-group">
+                <button id="prevButton" class="btn btn-primary">Previous</button>
+                <button id="nextButton" class="btn btn-primary">Next</button>
+              </div>
+              <div id="quizProgress" class="quiz-progress">
+                <div class="quiz-progress-label" id="quizProgressLabel">
+                  Quiz Progress: <span id="currentQuestion"></span>/<span id="totalQuestions"></span>
+                </div>
+                <div class="progress">
+                  <div id="quizProgressBar"
+                        class="progress-bar progress-bar-striped active quiz-progress"
+                        role="progressbar"
+                        aria-valuenow="0"
+                        aria-valuemin="0"
+                        aria-valuemax="100" style="width: 0%">
+                  </div>
+                </div> <!-- progress -->
+              </div>
+            </div>
+            <div id="quizEnd" class="page">
+              <div class="quiz-end-content">
+                <h3>Congratulations! </h3>
+                <p>You've reached the end of the quiz!</p>
+                <div>
+                  <button id="resetButton" class="btn btn-primary">Take Again</button>
+                  <button id="resultButton" class="btn btn-primary">View All Results</button>
+                </div>
+              </div>
+            </div>
+            <div id="results" class="page">
+              <h3>Quiz Question Analysis</h3>
+              <button id="exitResults" class="btn btn-primary">Go Back</button>
+              <ul id="quizBreakdown" class="quiz-breakdown">
+
+              </ul>
+            </div>
+         </div>
+
+         <div class="col-md-4 sidebar">
+           <p>The long path from material through function to creative work has only one goal: to create order out of the desperate confusion of our time.<br/><br/> A chair is a very difficult object. A skyscraper is almost easier. That is why Chippendale is famous.</p>
+           <P>- Ludwig Mies van der Rohe</P>
+         </div>
+       </div>
+     </div>
+
+   </div>
+
+ </div>
+  <script src="js/jquery.js" charset="utf-8"></script>
+  <script src="js/bootstrap.min.js" charset="utf-8"></script>
+  <script src="js/quiz.questions.js" charset="utf-8"></script>
+  <script src="js/quiz.js" charset="utf-8"></script>
+</body>
+
+</html>
