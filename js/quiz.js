@@ -3,6 +3,7 @@
     var QUESTION_ACTIVE_CLASS = 'question--active';
     var PAGE_VISIBLE_CLASS = 'page--visible';
     var INITIAL_PROGRESS = 0;
+
     var quizPage = $('#quiz');
     var quizEnd = $('#quizEnd');
     var quizContainer = $('#quizPages');
@@ -71,20 +72,18 @@
         var isCorrect = question.correct === parseInt(answer);
         var progressNum;
         var progressPercent;
-        console.log(question);
 
         if (isCorrect) {
-            tally[questionIndex]++;
+          tally[questionIndex]++;
         }
 
         nextQuestionPage();
 
         progressNum = progress;
         progressPercent = Math.ceil(100 * progressNum / totalProgress);
-        
+
         $('#currentQuestion').text(progress);
         setProgressBarValue(progressPercent);
-        console.log(tally);
     }
 
     function generateQuestions(questions) {
