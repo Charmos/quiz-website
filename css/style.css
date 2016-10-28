@@ -66,6 +66,10 @@ html, body {
 	padding-top: 30px;
 }
 
+.content h4 {
+	font-weight: 600;
+}
+
 .content-photo {
 	height: 300px;
 	width: auto;
