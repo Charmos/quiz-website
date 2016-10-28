@@ -64,7 +64,7 @@ window.questions = [
   },
    {
     text: 'It is believed to be the first bent tubular steel chair design.',
-    correct: 1,
+    correct: 0,
     choices: [
       {value:0, text: 'Wassily Chair'},
       {value:1, text: 'Barcelona Chair'},
