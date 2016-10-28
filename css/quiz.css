@@ -27,3 +27,12 @@
 .quiz-breakdown {
   padding-top: 20px;
 }
+
+.quiz .progress-bar {
+	background-color: #424242;
+}
+
+.quiz .btn-primary {
+    background-color: #666;
+    border-color: #777;
+}
