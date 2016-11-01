@@ -22,6 +22,7 @@ html, body {
 	float: right;
 	position: fixed;
 	z-index: 1;
+	transition: background-color 0.3s ease-out;
 }
 
 .width {
